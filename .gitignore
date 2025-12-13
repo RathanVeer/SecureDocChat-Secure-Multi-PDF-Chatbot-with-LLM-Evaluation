@@ -1,0 +1,13 @@
+# Secrets
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Vector indexes (do NOT commit FAISS data)
+faiss_index/
+
+# OS
+.DS_Store
