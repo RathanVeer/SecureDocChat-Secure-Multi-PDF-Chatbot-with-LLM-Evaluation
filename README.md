@@ -60,6 +60,7 @@ Scores are displayed directly in the UI.
 
 ## 📂 Project Structure
 
+```text
 SecureDocChat/
 │
 ├── app.py                # Main Streamlit application
@@ -67,35 +68,29 @@ SecureDocChat/
 ├── README.md             # Project documentation
 ├── .gitignore
 └── .streamlit/
-    └── secrets.toml      # (local only, NOT committed)
+    └── secrets.toml      # Local only (NOT committed)
+```
 
-🔐 Environment Setup
-1️⃣ Groq API Key
-Streamlit Cloud
-
-Add the following in App → Settings → Secrets:
-
-GROQ_API_KEY = "gsk_your_groq_api_key"
-
-Local Development
-
+## 🔐 Environment Setup
+### 1️⃣ Groq API Key
+#### Local Development
 Create .streamlit/secrets.toml:
-
+```text
 GROQ_API_KEY = "gsk_your_groq_api_key"
-
-
+```
 Add to .gitignore:
-
+```text
 .streamlit/secrets.toml
-
-📦 Installation (Local)
+```
+## 📦 Installation (Local)
+```text
 git clone https://github.com/RathanVeer/SecureDocChat-Secure-Multi-PDF-Chatbot-with-LLM-Evaluation.git
 cd SecureDocChat-Secure-Multi-PDF-Chatbot-with-LLM-Evaluation
 
 pip install -r requirements.txt
 streamlit run app.py
-
-📄 How It Works
+```
+## 📄 How It Works
 
 Upload one or more PDF documents
 
@@ -160,6 +155,5 @@ LangChain community
 
 Streamlit team
 
-📜 License
 
 MIT License
