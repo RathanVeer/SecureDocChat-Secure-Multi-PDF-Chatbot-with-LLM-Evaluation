@@ -74,86 +74,80 @@ SecureDocChat/
 ## 🔐 Environment Setup
 ### 1️⃣ Groq API Key
 #### Local Development
-Create .streamlit/secrets.toml:
-```text
+Create `.streamlit/secrets.toml:`
+```toml
 GROQ_API_KEY = "gsk_your_groq_api_key"
 ```
-Add to .gitignore:
-```text
+Add to `.gitignore:`
+```base
 .streamlit/secrets.toml
 ```
 ## 📦 Installation (Local)
-```text
+```base
 git clone https://github.com/RathanVeer/SecureDocChat-Secure-Multi-PDF-Chatbot-with-LLM-Evaluation.git
 cd SecureDocChat-Secure-Multi-PDF-Chatbot-with-LLM-Evaluation
 
 pip install -r requirements.txt
 streamlit run app.py
 ```
+## 🌐 Live Application
+
+You can try out the live Streamlit application here:  
+[Secure Multi-PDF RAG Chatbot](https://securedocchat.streamlit.app/)  
+
+Or click the badge to launch:
+
+[![Launch Streamlit App](https://img.shields.io/badge/Launch-Streamlit-blue?logo=streamlit)](https://securedocchat.streamlit.app/)
+
 ## 📄 How It Works
 
-Upload one or more PDF documents
+1. Upload one or more PDF documents  
+2. Click **Process PDFs**  
+3. Documents are:
+   - Parsed  
+   - Chunked  
+   - Embedded  
+   - Indexed using **FAISS**
 
-Click Process PDFs
+4. Ask a question:
+   - Input is safety-checked
+   - Relevant chunks are retrieved
+   - LLM generates an answer grounded in context
+   - Output is validated
+   - Answer is evaluated and scored
 
-Documents are:
+---
 
-Parsed
+## ⚠️ Limitations
 
-Chunked
+- LLM-based evaluation is probabilistic
+- Very large PDFs may increase processing time
+- FAISS index is in-memory (not persistent across restarts)
 
-Embedded
+---
 
-Indexed using FAISS
+## 🔮 Future Improvements
 
-Ask a question:
+- Persistent vector storage (S3 / GCS)
+- Streaming responses
+- Token & cost tracking
+- User authentication
+- Feedback-based RLHF
+- Multi-language support
 
-Input is safety-checked
+---
 
-Relevant chunks are retrieved
+📬 **Contact** <br>
+Rathan Veer <br>
+📧 rathanveer.balla@gmail.com <br>
+🔗 https://www.linkedin.com/in/rathan-veer-24feb2002/
 
-LLM generates an answer grounded in context
+---
 
-Output is validated
+## ⭐ Acknowledgements
 
-Answer is evaluated and scored
+- Groq for ultra-fast inference
+- LangChain community
+- Streamlit team
 
-⚠️ Limitations
-
-LLM-based evaluation is probabilistic
-
-Very large PDFs may increase processing time
-
-FAISS index is in-memory (not persistent across restarts)
-
-🔮 Future Improvements
-
-Persistent vector storage (S3 / GCS)
-
-Streaming responses
-
-Token & cost tracking
-
-User authentication
-
-Feedback-based RLHF
-
-Multi-language support
-
-🧑‍💻 Author
-
-Rathan Veer
-Research Engineer | NLP | Secure RAG | Document AI
-
-🔗 GitHub: https://github.com/RathanVeer
-
-⭐ Acknowledgements
-
-Groq for ultra-fast inference
-
-LangChain community
-
-Streamlit team
-
-
-MIT License
+MIT 
