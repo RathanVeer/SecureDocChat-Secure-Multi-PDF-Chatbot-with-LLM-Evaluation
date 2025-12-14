@@ -1,0 +1,165 @@
+# 📚 Secure Multi-PDF RAG Chatbot with Evaluation
+
+A **production-grade Streamlit application** that enables **secure question answering over multiple PDFs** using **Retrieval-Augmented Generation (RAG)** with **Groq-hosted LLMs**.  
+The system includes **prompt-injection defense, harmful-content filtering, bias detection**, and **automatic response evaluation**.
+
+---
+
+## 🚀 Features
+
+### 🔍 Retrieval-Augmented Generation (RAG)
+- Upload multiple PDFs  
+- Automatic chunking and embedding using Sentence Transformers  
+- Fast semantic search using FAISS  
+- Context-aware responses grounded strictly in retrieved documents  
+
+### 🔐 Security & Safety
+- Prompt-injection detection  
+- Jailbreak attempt blocking  
+- Harmful request filtering  
+- Bias detection on both input and output  
+- Dual-LLM architecture (separate models for generation & evaluation)  
+
+### 📊 Automatic Evaluation
+Each response is evaluated using **LLM-based metrics**:
+- **Faithfulness** – grounded in provided context  
+- **Coherence** – clarity and logical flow  
+- **Completeness** – coverage of the user query  
+
+Scores are displayed directly in the UI.
+
+### 🎛️ Customizable LLM Settings
+- Select LLM model for:
+  - Response generation  
+  - Safety & evaluation  
+- Adjustable **temperature (0–1)** via slider  
+
+### 🖥️ Streamlit UI
+- Interactive chat interface  
+- Sidebar controls  
+- Safe deployment on Streamlit Cloud  
+
+---
+
+## 🧠 Supported LLMs (Groq)
+- `openai/gpt-oss-20b` *(default)*  
+- `llama-3.3-70b-versatile`  
+- `qwen/qwen3-32b`  
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** Streamlit  
+- **LLMs:** Groq API  
+- **RAG:** LangChain + FAISS  
+- **Embeddings:** `sentence-transformers/all-MiniLM-L6-v2`  
+- **PDF Parsing:** PyPDFLoader  
+- **Evaluation:** LLM-as-a-Judge  
+
+---
+
+## 📂 Project Structure
+
+SecureDocChat/
+│
+├── app.py                # Main Streamlit application
+├── requirements.txt      # Cloud-compatible dependencies
+├── README.md             # Project documentation
+├── .gitignore
+└── .streamlit/
+    └── secrets.toml      # (local only, NOT committed)
+
+🔐 Environment Setup
+1️⃣ Groq API Key
+Streamlit Cloud
+
+Add the following in App → Settings → Secrets:
+
+GROQ_API_KEY = "gsk_your_groq_api_key"
+
+Local Development
+
+Create .streamlit/secrets.toml:
+
+GROQ_API_KEY = "gsk_your_groq_api_key"
+
+
+Add to .gitignore:
+
+.streamlit/secrets.toml
+
+📦 Installation (Local)
+git clone https://github.com/RathanVeer/SecureDocChat-Secure-Multi-PDF-Chatbot-with-LLM-Evaluation.git
+cd SecureDocChat-Secure-Multi-PDF-Chatbot-with-LLM-Evaluation
+
+pip install -r requirements.txt
+streamlit run app.py
+
+📄 How It Works
+
+Upload one or more PDF documents
+
+Click Process PDFs
+
+Documents are:
+
+Parsed
+
+Chunked
+
+Embedded
+
+Indexed using FAISS
+
+Ask a question:
+
+Input is safety-checked
+
+Relevant chunks are retrieved
+
+LLM generates an answer grounded in context
+
+Output is validated
+
+Answer is evaluated and scored
+
+⚠️ Limitations
+
+LLM-based evaluation is probabilistic
+
+Very large PDFs may increase processing time
+
+FAISS index is in-memory (not persistent across restarts)
+
+🔮 Future Improvements
+
+Persistent vector storage (S3 / GCS)
+
+Streaming responses
+
+Token & cost tracking
+
+User authentication
+
+Feedback-based RLHF
+
+Multi-language support
+
+🧑‍💻 Author
+
+Rathan Veer
+Research Engineer | NLP | Secure RAG | Document AI
+
+🔗 GitHub: https://github.com/RathanVeer
+
+⭐ Acknowledgements
+
+Groq for ultra-fast inference
+
+LangChain community
+
+Streamlit team
+
+📜 License
+
+MIT License
