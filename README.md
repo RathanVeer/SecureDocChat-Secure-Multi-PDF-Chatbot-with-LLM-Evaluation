@@ -1,4 +1,4 @@
-# 📚 SecureDocChat Multi-PDF RAG Chatbot with LLM Evaluation
+# 📚 SecureDocChat-Secure Multi-PDF Chatbot with LLM Evaluation
 
 A **production-grade Streamlit application** that enables **secure question answering over multiple PDFs** using **Retrieval-Augmented Generation (RAG)** with **Groq-hosted LLMs**.  
 The system includes **prompt-injection defense, harmful-content filtering, bias detection**, and **automatic response evaluation**.
