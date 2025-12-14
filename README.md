@@ -128,6 +128,7 @@ Or click the badge to launch:
 
 ## 🔮 Future Improvements
 
+- Conversational Mode
 - Persistent vector storage (S3 / GCS)
 - Streaming responses
 - Token & cost tracking
@@ -137,7 +138,7 @@ Or click the badge to launch:
 
 ---
 
-📬 **Contact** <br>
+## 📬 Contact <br>
 Rathan Veer <br>
 📧 rathanveer.balla@gmail.com <br>
 🔗 https://www.linkedin.com/in/rathan-veer-24feb2002/
@@ -150,4 +151,3 @@ Rathan Veer <br>
 - LangChain community
 - Streamlit team
 
-MIT 
